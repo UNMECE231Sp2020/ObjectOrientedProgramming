@@ -31,7 +31,7 @@ class Shape3D {
 
 		virtual ~Shape3D();
 
-		virtual double depth() const;
+		virtual double depth() const = 0;
 };
 
 class Rectangle : public Shape2D {
@@ -60,6 +60,7 @@ class Cube : public Rectangle, public Shape3D {
 		Cube(double length, double width, double depth);
 		Cube(const Cube &cube);
 
+		double depth() const;
 		double surface_area() const;
 		double volume() const;
 

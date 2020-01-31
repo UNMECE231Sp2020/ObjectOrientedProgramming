@@ -110,9 +110,11 @@ Shape3D::~Shape3D() {
 
 }
 
+/*
 double Shape3D::depth() const {
 	return _depth;
 }
+*/
 
 Cube::Cube() : Rectangle(), Shape3D() {
 	_surface_area = calculate_surface_area();
@@ -127,6 +129,10 @@ Cube::Cube(double length, double width, double depth) : Rectangle(length, width)
 Cube::Cube(const Cube &cube) : Rectangle(cube._length, cube._width), Shape3D(cube._depth) {
 	_surface_area = calculate_surface_area();
 	_volume = calculate_volume();
+}
+
+double Cube::depth() const {
+	return _depth;
 }
 
 double Cube::surface_area() const {
